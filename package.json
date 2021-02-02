@@ -1,0 +1,13 @@
+{
+  "name": "templater",
+  "version": "0.0.1",
+  "description": "a very simple templating app",
+  "main": "index.js",
+  "author": "rubyr",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "test:make": "node makeTemplate.js ./example example-template",
+    "test:read": "rm -rf duped-example && node readTemplate.js example-template.json duped-example"
+  }
+}

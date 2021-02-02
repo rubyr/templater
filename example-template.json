@@ -1,0 +1,14 @@
+{
+  "name": "example-template",
+  "contents": {
+    "index.js": "const sayHello = require(\"./src/hello\");\n\nsayHello();\n",
+    "package.json": "{\n  \"name\": \"hello\",\n  \"version\": \"1.0.0\",\n  \"description\": \"says hello\",\n  \"main\": \"index.js\",\n  \"author\": \"auth\",\n  \"license\": \"MIT\",\n  \"private\": true,\n  \"scripts\": {\n    \"test\": \"node ./src/test/hello.test.js\"\n  }\n}\n",
+    "src": {
+      "hello.js": "function sayHello() {\n  console.log(\"hello, world\");\n}\n\nmodule.exports = sayHello;\n",
+      "test": {
+        "hello.test.js": "const sayHello = require(\"../hello\");\n\nfunction testhello() {\n  console.log(\"testing sayHello\\n\");\n  sayHello();\n  console.log(\"i hope it worked\\n\");\n}\n\ntesthello();\n"
+      }
+    }
+  },
+  "postinstall": "node index.js && node src/test/hello.test.js"
+}
